@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Hotel Booking Form</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Hotel Booking Registration Form</h2>
+    <form id="bookingForm">
+      <!-- Customer Info Section -->
+      <div class="form-section" id="customerSection">
+        <label for="customerName">Customer Name:</label>
+        <input type="text" id="customerName" required>
+        <label for="checkInDate">Check-in Date:</label>
+        <input type="date" id="checkInDate" required>
+      </div>
+
+      <!-- Total Number of Persons Section -->
+      <div class="form-section" id="totalPersonsSection">
+        <label for="totalPersons">Total No of Persons:</label>
+        <input type="number" id="totalPersons" required>
+        <div id="personsDetails">
+          <div class="person-details">
+            <label for="name">Name:</label>
+            <input type="text" class="person-name" required>
+            <label for="gender">Gender:</label>
+            <select class="person-gender" required>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+            <label for="age">Age:</label>
+            <input type="number" class="person-age" required>
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" class="person-mobile" required>
+            <label for="email">Email ID:</label>
+            <input type="email" class="person-email" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room Information Section -->
+      <div class="form-section" id="roomSection">
+        <label for="roomType">Room Type:</label>
+        <select id="roomType">
+          <option value="deluxe">Delux Room</option>
+          <option value="suite">Suite Room</option>
+        </select>
+        <label for="amenities">Amenities:</label>
+        <select id="amenities" multiple>
+          <option value="ac">AC</option>
+          <option value="locker">Locker</option>
+        </select>
+      </div>
+
+      <!-- Advance Payment Section -->
+      <div class="form-section" id="advanceSection">
+        <label for="advanceAmount">Advance Amount:</label>
+        <input type="number" id="advanceAmount" required>
+      </div>
+
+      <!-- Balance Amount Section -->
+      <div class="form-section" id="balanceSection">
+        <label for="balance">Balance:</label>
+        <input type="text" id="balance" readonly>
+      </div>
+
+      <!-- Total Cost Calculation Section -->
+      <div class="form-section" id="totalCostSection">
+        <label for="totalRoomCost">Total Room Cost:</label>
+        <input type="text" id="totalRoomCost" readonly>
+        <label for="totalAmenitiesCost">Total Amenities Cost:</label>
+        <input type="text" id="totalAmenitiesCost" readonly>
+        <label for="totalCost">Total Cost:</label>
+        <input type="text" id="totalCost" readonly>
+      </div>
+
+      <!-- Additional Charges Section -->
+      <div class="form-section" id="additionalChargesSection">
+        <label for="extraPersons">Extra Persons:</label>
+        <input type="number" id="extraPersons" value="0">
+      </div>
+
+      <button type="button" onclick="calculateTotal()">Calculate Total</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
